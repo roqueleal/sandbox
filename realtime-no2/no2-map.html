@@ -267,7 +267,17 @@
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
-
+        var testLegend = L.control({
+    position: 'bottomright'
+});
+testLegend.onAdd = function(map) {
+    var src = "https://stream.ecmwf.int/data/gorax-blue-008/data/scratch_standby/20200823-0150/21/legend-gorax-blue-008-b6a07f0b7be1ee2f1ad515c21ca67e14-tL4qmm.png";
+    var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML +=
+        '<img src="' + src + '" alt="legend">';
+    return div;
+};
+testLegend.addTo(map);
         function style_Pays_1_0() {
             return {
                 pane: 'pane_Pays_1',
