@@ -442,7 +442,7 @@ map.on("load", function () {
                     "data": geojsonData
                 },
                 "paint": {
-                    "circle-radius": 3.3, // size of circles
+                    "circle-radius": 5, // size of circles
                     "circle-color": [
                                     "match",
                                     ["get", "PROVINCIA"],
@@ -455,7 +455,8 @@ map.on("load", function () {
                                     ["Esmeraldas"],
                                     "#ffaf12",
                                     ["Santa Elena"],
-                                    "#d13b40"
+                                    "#d13b40",
+                                    "green"
                                 ],
                     "circle-stroke-color": "grey",
                     "circle-stroke-width": 1,
