@@ -442,13 +442,21 @@ map.on("load", function () {
                     "data": geojsonData
                 },
                 "paint": {
-                    "circle-radius": 2.3, // size of circles
+                    "circle-radius": 3.3, // size of circles
                     "circle-color": [
                                     "match",
-                                    ["get", "Implication 2019-2020"],
-                                    ["2020"],
-                                    "#f55742",
-                                    "#e0f542"
+                                    ["get", "PROVINCIA"],
+                                    ["Santa Elena"],
+                                    ["Manabi"],
+                                    ["El Oro"],
+                                    ["Esmeralda"],
+                                    ["Guayas"],
+                                    "#a2553a",
+                                    "#72617d",
+                                    "#4ec5a5",
+                                    "#ffaf12",
+                                    "#d13b40",
+                                    "#34558b"
                                 ],
                     "circle-stroke-color": "grey",
                     "circle-stroke-width": 1,
