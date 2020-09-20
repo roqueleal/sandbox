@@ -3,10 +3,10 @@ const config = {
     style: "mapbox://styles/vistcomunicacion/ckf5qsnnj2h8f19qqdim9r8m1",
     accessToken: "pk.eyJ1IjoidmlzdGNvbXVuaWNhY2lvbiIsImEiOiJja2Nyc3ZiYzQxaTJ4MnFzNXBpMG5iZno2In0.9bPy87fQMJpOmV2sJ_AYWQ",
     CSV: "./GEOVISOR.csv",
-    center: [4.825780, 45.477416], //Lng, Lat
-    zoom: 7, //Default zoom
-    title: "Réseau Traces",
-    description: "Le réseau TRACES, Histoire, mémoires et actualités des migrations s’est créé à la fin des années 1990. Il regroupe une très grande diversité d’acteurs, qui tous ont en commun de travailler les questions qui entourent les migrations d’hier et d’aujourd’hui en région Auvergne-Rhône-Alpes : chercheurs, artistes, médias, associations socio-culturelles, lieux de diffusion, collectivités territoriales, institutions, collectifs d’habitants, etc.",
+    center: [-80.325780, -2.477416], //Lng, Lat
+    zoom: 8, //Default zoom
+    title: "Geovisor Camaronero",
+    description: "Entorno de prueba",
     sideBarInfo: ["Structure"],
     popupNom: ["Structure"],
     popupDescrip:["Description"],
@@ -21,17 +21,13 @@ const config = {
         {
             type: "dropdown",
             title: "Département: ",
-            columnHeader: "Departement",
+            columnHeader: "PROVINCIA",
             listItems: [
-              'Ain',
-                'Ardèche',
-                'Auvergne',
-                'Drôme',
-                'Isère',
-                'Haute-Savoie',
-                'Loire',
-                'Rhône',
-                'Savoie'
+              'Santa Elena',
+                'El Oro',
+                'Manabi',
+                'Guayas',
+                'Esmeraldas'
             ]
         },
         {
@@ -43,3 +39,4 @@ const config = {
     ]
 
 };
+
