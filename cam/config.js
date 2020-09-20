@@ -7,20 +7,20 @@ const config = {
     zoom: 8, //Default zoom
     title: "Geovisor Camaronero",
     description: "Entorno de prueba",
-    sideBarInfo: ["Structure"],
-    popupNom: ["Structure"],
-    popupDescrip:["Description"],
-    popupWeb:["Siteweb"],
+    sideBarInfo: ["NOMBRE"],
+    popupNom: ["NOMBRE"],
+    popupDescrip:["Suprf-Ha"],
+    popupWeb:["INGName"],
     filters: [
         {
             type: "checkbox",
             title: "Thematique : ",
-            columnHeader: "Thématique de travail",
-            listItems: ["Solidarités","Education et Education populaire", "Champ Culturel Arts","Patrimoine & Mémoire","Recherche","Médias et Information"]
+            columnHeader: "Tipo_Camar",
+            listItems: ["En proceso regularización","Regularizada"]
         },
         {
             type: "dropdown",
-            title: "Département: ",
+            title: "Provincia: ",
             columnHeader: "PROVINCIA",
             listItems: [
               'Santa Elena',
@@ -33,10 +33,9 @@ const config = {
         {
             type: "checkbox",
             title: "Type de structure: ",
-            columnHeader: "Forme",
-            listItems: ["Association", "etc"]
+            columnHeader: "ISLA",
+            listItems: ["1", "0"]
         }
     ]
 
 };
-
