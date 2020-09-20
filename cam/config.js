@@ -34,7 +34,7 @@ const config = {
             type: "checkbox",
             title: "Type de structure: ",
             columnHeader: "ISLA",
-            listItems: ["1", "0"]
+            listItems: ["Isla", "Continente"]
         }
     ]
 
