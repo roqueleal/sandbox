@@ -5,7 +5,7 @@ const config = {
     CSV: "./GEOVISOR.csv",
     center: [-80.325780, -2.477416], //Lng, Lat
     zoom: 8, //Default zoom
-    title: "Geovisor Camaronero",
+    title: "Geovisor Camaronero 2",
     description: "Entorno de prueba",
     sideBarInfo: ["NOMBRE"],
     popupNom: ["NOMBRE"],
