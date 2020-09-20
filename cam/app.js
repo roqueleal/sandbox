@@ -442,7 +442,7 @@ map.on("load", function () {
                     "data": geojsonData
                 },
                 "paint": {
-                    "circle-radius": 5.3, // size of circles
+                    "circle-radius": 2.3, // size of circles
                     "circle-color": [
                                     "match",
                                     ["get", "Implication 2019-2020"],
