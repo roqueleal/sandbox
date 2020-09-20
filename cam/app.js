@@ -446,17 +446,16 @@ map.on("load", function () {
                     "circle-color": [
                                     "match",
                                     ["get", "PROVINCIA"],
-                                    ["Santa Elena"],
-                                    ["Manabi"],
-                                    ["El Oro"],
-                                    ["Esmeralda"],
                                     ["Guayas"],
                                     "#a2553a",
+                                    ["Manabi"],
                                     "#72617d",
+                                    ["El Oro"],
                                     "#4ec5a5",
+                                    ["Esmeraldas"],
                                     "#ffaf12",
-                                    "#d13b40",
-                                    "#34558b"
+                                    ["Santa Elena"],
+                                    "#d13b40"
                                 ],
                     "circle-stroke-color": "grey",
                     "circle-stroke-width": 1,
