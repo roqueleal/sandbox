@@ -32,11 +32,12 @@ var map = new mapboxgl.Map({
 
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
-  placeholder: "Buscar Ciudades",
+  placeholder: "Rechercher une ville",
   types: "place"
 });
 
 map.addControl(geocoder, "top-right");
+
 
 // Get a single isochrone for a given position and return the GeoJSON
 var getIso = function getIso(position) {
@@ -76,18 +77,8 @@ var getIntersection = function getIntersection() {
   // Update the message to provide info to the user
   if (intersection) {
     getPlaces(intersection);
-    map.getSource("intersection").setData(intersection);
-    msg.innerText = "Espace commun: " + ((turf.area(intersection)) / 1000000).toFixed(1) + " km2";
+
   } else {
-    map.getSource("intersection").setData({
-      type: "FeatureCollection",
-      features: []
-    });
-    map.getSource("places").setData({
-      type: "FeatureCollection",
-      features: []
-    });
-    msg.innerText = "No hay intersección. Intentá cambiar el modo de viaje o el límite de tiempo.";
   }
 };
 
@@ -122,17 +113,28 @@ var popup = new mapboxgl.Popup({
   closeOnClick: false
 });
 
-// Map setup stuff
-map.on("load", function () {
 
+// Map setup stuff
+map.on("load", function() {
+    // insert isochrone layer behind labels
+    var layers = map.getStyle().layers;
+    // Find the index of the first symbol layer in the map style
+    var firstSymbolId;
+    for (var i = 0; i < layers.length; i++) {
+        if (layers[i].type === 'symbol') {
+            firstSymbolId = layers[i].id;
+            break;
+        }
+    }
   // Add sources and layers for the two isochrones
   map.addSource("isoA", {
     type: "geojson",
     data: {
       type: "FeatureCollection",
       features: []
-    }
-  });
+     }
+  }
+  );
 
   map.addLayer({
     "id": "isoLayerA",
@@ -140,18 +142,22 @@ map.on("load", function () {
     "source": "isoA",
     "layout": {},
     "paint": {
-      "fill-color": "yellow",
+      "fill-color": "Yellow",
       "fill-opacity": 0.4
     }
-  }, "poi-label");
+  }, firstSymbolId, "poi-label",
+  
+  );
 
   map.addSource("isoB", {
     type: "geojson",
     data: {
       type: "FeatureCollection",
-      features: []
+      features: [],
+      
     }
   });
+  
 
   map.addLayer({
     "id": "isoLayerB",
@@ -159,17 +165,20 @@ map.on("load", function () {
     "source": "isoB",
     "layout": {},
     "paint": {
-      "fill-color": "white",
+      "fill-color": "Cyan",
       "fill-opacity": 0.4
     }
-  }, "poi-label");
+  }, firstSymbolId, "poi-label",
+  
+  );
 
   // Add a source and layer for the intersection result
   map.addSource("intersection", {
     type: "geojson",
     data: {
       type: "FeatureCollection",
-      features: []
+      features: [],
+  
     }
   });
 
@@ -183,13 +192,15 @@ map.on("load", function () {
       "line-opacity": 0.7,
       "line-width": 2
     }
-  });
+  }, firstSymbolId
+  );
 
   map.addSource("places", {
     type: "geojson",
     data: {
       type: "FeatureCollection",
-      features: []
+      features: [],
+
     }
   });
 
@@ -199,9 +210,12 @@ map.on("load", function () {
     "source": "places",
     "layout": {
       "icon-image": isoAppData.params.category + "-15",
-      "icon-allow-overlap": true
+      "icon-allow-overlap": true,
     },
-    "paint": {}
+    "paint": {
+      
+    }, 
+    
   });
 
   geocoder.on("result", function (ev) {
