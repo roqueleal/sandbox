@@ -22,7 +22,7 @@ var isoAppData = {
 var params = document.getElementById("params");
 var msg = document.getElementById("msg");
 
-// Basic map instance (zoomed to CABA, Argentina)
+// Basic map instance (zoomed to Lyon)
 var map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/roqueleal08/ckfhgtnkv14sp19rrm5fv7ofh",
