@@ -2,7 +2,7 @@
 const config = {
     style: "mapbox://styles/vistcomunicacion/ckf5qsnnj2h8f19qqdim9r8m1",
     accessToken: "pk.eyJ1IjoidmlzdGNvbXVuaWNhY2lvbiIsImEiOiJja2Nyc3ZiYzQxaTJ4MnFzNXBpMG5iZno2In0.9bPy87fQMJpOmV2sJ_AYWQ",
-    CSV: "https://raw.githubusercontent.com/roqueleal/geo/master/finale.csv",
+    CSV: "./finale.csv",
     center: [-80.325780, -2.477416], //Lng, Lat
     zoom: 8, //Default zoom
     title: "Geovisor Camaronero",
@@ -16,7 +16,7 @@ const config = {
             type: "checkbox",
             title: "Thematique : ",
             columnHeader: "produit",
-            listItems: ["Munster","Touraine"]
+            listItems: ["Munster","Farine de châtaigne corse", "Crémant de Bordeaux"]
         },
         {
             type: "dropdown",
@@ -24,14 +24,15 @@ const config = {
             columnHeader: "region",
             listItems: [
               'Grand Est',
-                'Normandie'
+                'Corse',
+                'Nouvelle-Aquitaine'
             ]
         },
         {
             type: "checkbox",
             title: "Type",
             columnHeader: "type",
-            listItems: ["Fromages", "Eaux"]
+            listItems: ["Fromages", "Vins", "Fruits"]
         }
     ]
 

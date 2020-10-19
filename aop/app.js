@@ -448,9 +448,9 @@ map.on("load", function () {
                                     ["get", "produit"],
                                     ["Munster"],
                                     "#a2553a",
-                                    ["Crémant de Bourgogne"],
+                                    ["Farine de châtaigne corse"],
                                     "#72617d",
-                                    ["Beaune premier cru Clos Saint-Landry"],
+                                    ["Crémant de Bordeaux"],
                                     "#4ec5a5"
                                 ],
                     "circle-stroke-color": "grey",
